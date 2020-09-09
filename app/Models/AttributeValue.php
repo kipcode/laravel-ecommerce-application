@@ -14,6 +14,7 @@ class AttributeValue extends Model
     /**
      * @var string
      */
+    protected $guarded = [];
     protected $table = 'attribute_values';
 
     /**

@@ -34,6 +34,12 @@ Route::group(['prefix'  =>  'admin'], function () {
       Route::get('/{id}/edit', 'App\Http\Controllers\Admin\AttributeController@edit')->name('admin.attributes.edit');
       Route::post('/update', 'App\Http\Controllers\Admin\AttributeController@update')->name('admin.attributes.update');
       Route::get('/{id}/delete', 'App\Http\Controllers\Admin\AttributeController@delete')->name('admin.attributes.delete');
+      
+      Route::post('/get-values', 'App\Http\Controllers\Admin\AttributeValueController@getValues');
+      Route::post('/add-values', 'App\Http\Controllers\Admin\AttributeValueController@addValues');
+      Route::post('/update-values', 'App\Http\Controllers\Admin\AttributeValueController@updateValues');
+      Route::post('/delete-values', 'App\Http\Controllers\Admin\AttributeValueController@deleteValues');
+      
     });
 
 });
