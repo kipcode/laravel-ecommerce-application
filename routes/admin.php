@@ -25,6 +25,16 @@ Route::group(['prefix'  =>  'admin'], function () {
       Route::post('/update', 'App\Http\Controllers\Admin\CategoryController@update')->name('admin.categories.update');
       Route::get('/{id}/delete', 'App\Http\Controllers\Admin\CategoryController@delete')->name('admin.categories.delete');
     });
+    
+    /*attributes*/
+    Route::group(['prefix'  =>   'attributes'], function() {
+      Route::get('/', 'App\Http\Controllers\Admin\AttributeController@index')->name('admin.attributes.index');
+      Route::get('/create', 'App\Http\Controllers\Admin\AttributeController@create')->name('admin.attributes.create');
+      Route::post('/store', 'App\Http\Controllers\Admin\AttributeController@store')->name('admin.attributes.store');
+      Route::get('/{id}/edit', 'App\Http\Controllers\Admin\AttributeController@edit')->name('admin.attributes.edit');
+      Route::post('/update', 'App\Http\Controllers\Admin\AttributeController@update')->name('admin.attributes.update');
+      Route::get('/{id}/delete', 'App\Http\Controllers\Admin\AttributeController@delete')->name('admin.attributes.delete');
+    });
 
 });
 ?>
